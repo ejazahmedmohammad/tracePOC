@@ -1,0 +1,17 @@
+server:
+  port: 9080
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  cloud:
+    gateway:
+      routes:
+        - id: p1
+          uri: http://localhost:8080
+          predicates:
+            - Path=/getBill
+
+        - id: p2
+          uri: http://localhost:8080
+          predicates:
+            - Path=/getBillAddress
